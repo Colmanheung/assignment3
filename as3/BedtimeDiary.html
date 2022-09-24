@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedtime Diary</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+
+</head>
+<body class="website" >
+<div id="app"> 
+    <div class="leftpanel">
+        <div>
+            <div>
+                <h1>Bedtime Diary</h1>
+            </div>  
+            <br>              
+            <div>
+                <ul class="liststyle">
+                    <li><img src="list_style1.png" class="imagesize"></img><a @click="CalendarPage = true">Calendar</a></li>
+                    <li><image src="list_style1.png"class="imagesize"></image><a @click="CalendarPage = false">Today's Diary</a></li>
+                </ul>               
+            </div>
+        </div>
+        <div id="componentbtn">
+            <!-- <a class="button" style="vertical-align:middle" href='logout.html'><span>Logout</span></a> -->
+            <component1 link="logout.html">Logout</component1>
+
+        </div>
+    </div>
+    
+    <div class="rightpanel" v-if="CalendarPage">   
+        <div class="login">
+            <h1>August</h1>
+                 <ul class="weekdays">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>                    
+                </ul>
+            <div id="calendar">
+                <button class="empty_date"></button>
+                  <!-- (date.emotion==1)  is the value we get from the Today's page. The result (class="{angryActive) will be shown on the calendar page. (turn red)                                                                                        -->
+                 <button v-for="date in dates" v-on:click="CurrentDate= date.name, CalendarPage=false" :class="{angryActive:date.emotion==1,happyActive:date.emotion==2,worryActive:date.emotion==3,peacefulActive:date.emotion==4,sadActive:date.emotion==5}">{{date.name}}</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="rightpanel" v-if="!CalendarPage"> 
+            <div class="toppanel">
+                <p>{{dates[CurrentDate-1].quote}}</p>
+            </div>
+             <div class="diarypanel">
+                <div class="date">
+                    <p>{{dates[CurrentDate-1].date}}</p>
+                </div>
+                <!-- input text -->
+                <div class="text">
+                    <textarea placeholder="what happened today......" value="dates[CurrentDate-1].text" v-model="saveText" >
+                    </textarea>
+                 </div>
+            </div>
+            <div class="moodcontainer">
+                <div class="moodpanel">
+                    <!-- mood function -->
+                    <h2>How do you feel today?</h2>
+                    <div class="moodcontainer_btn_container">
+                        <button class="moodcontainer_btn angry" @click="dates[CurrentDate-1].emotion=1" :class="{angryActive:dates[CurrentDate-1].emotion==1}">Angry</button>
+                        <button class="moodcontainer_btn happy" @click="dates[CurrentDate-1].emotion=2" :class="{happyActive:dates[CurrentDate-1].emotion==2}">Happy</button>
+                        <button class="moodcontainer_btn worry" @click="dates[CurrentDate-1].emotion=3" :class="{worryActive:dates[CurrentDate-1].emotion==3}">Worry</button>
+                        <button class="moodcontainer_btn peaceful" @click="dates[CurrentDate-1].emotion=4" :class="{peacefulActive:dates[CurrentDate-1].emotion==4}">Peaceful</button>
+                        <button class="moodcontainer_btn sad" @click="dates[CurrentDate-1].emotion=5" :class="{sadActive:dates[CurrentDate-1].emotion==5}">Sad</button>
+                    </div>
+                </div>
+                <!-- share function -->
+                <div class="sharepanel">
+                    <h2>Who do you want to share this with?</h2>
+                    <div class="shareinput_container">
+                        <div><input type="checkbox" v-model="dates[CurrentDate-1].share[0]">Myself</input> </div>
+                        <div><input type="checkbox" v-model="dates[CurrentDate-1].share[1]">My family</input></div>
+                        <div><input type="checkbox" v-model="dates[CurrentDate-1].share[2]">My friend</input> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+    <script src="component.js"></script>
+    <script src="date.js"></script>
+</body>
+</html>

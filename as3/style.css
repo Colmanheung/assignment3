@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+*{
+    font-family: 'montserrat';
+    color: black;
+}
+.website{
+    /* overflow-x: hidden; */
+    background-color: rgb(177, 208, 202);
+}
+
+.toppanel{
+    background-color: #68B0AB;
+    padding: 20px;
+    text-align:center;
+    font-size: 30px; 
+    width: 100%;
+    border-radius: 25px;
+    margin-left: 2%;
+                   
+}
+
+.leftpanel{
+    height: 80vh;
+    width: 20%;
+    background-color: #68B0AB;
+    padding: 3% 1% 3% 3%;
+    border-radius: 25px;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rightpanel{        
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.diarypanel{
+    height:70vh;
+    width:60%;
+    background-color: #8EC0AB;
+    border-radius: 25px;
+    margin-left: 2%;
+    margin-top: 2%;
+    padding:3% 3% 0% 3%;
+
+
+}
+.moodcontainer{
+    height:auto;
+    width: 30%;
+    background-color: rgb(177, 208, 202);
+    border-radius: 25px;
+    margin-left: 2%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.moodpanel{
+    background-color: #68B0AB;
+    border-radius: 25px;
+    padding:3% 3% 0% 7%;
+    height: 40%;
+    width: auto;
+    margin-top: 2%;
+    
+}
+
+.sharepanel{
+    height:60%;
+    width: auto;
+    background-color: #68B0AB;
+    border-radius: 25px;
+    margin-top: 2%;
+    padding:3% 3% 0% 7%;
+}
+
+.date{
+    width: auto;
+    border: 2px solid black;
+    border-radius: 18px;
+    height:50px;
+    padding-left: 10px;
+}
+
+.text{
+    width: auto;
+    border: 2px solid black;
+    border-radius: 18px;
+    height:77%;
+    padding: 2%;
+    margin-top: 10px;
+
+}
+
+.text textarea{
+    border: none;
+    background-color: #8EC0AB;
+    height: 99%;
+    width:  100%;
+
+    
+}
+
+.text textarea:focus{
+    outline:none
+
+}
+
+
+.buttonfont{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    
+
+}
+
+.logout{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+
+#app{
+    display: flex;
+}
+
+.login{
+    background-color: #68B0AB;
+    border-radius: 25px;
+    padding:0% 2% 0% 7%;
+    height: 92.5vh;
+    width: 100%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+  }
+  
+  .weekdays li {
+   list-style: none;
+    width: 13.6%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+#calendar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#calendar button {
+    width: 5.6%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: grey;
+    border: 0;
+}
+
+#calendar button:before{
+  content:"";
+  display: block;
+  padding-bottom: 35%;  
+}
+
+.empty_date{
+    background-color:transparent !important;
+    border: 0;
+}
+
+#calendar button:after{
+    content:"";
+    display: block;
+    padding-bottom: 35%;  
+  }
+
+  .login h1{
+    text-align: center;
+    margin-top: 0%;
+  }
+
+  .logincss{
+    background-color: rgb(177, 208, 202);
+}
+
+.logintitle{
+    text-align: center;
+    padding-top: 7%;
+    font-size: 40px;
+}
+
+.loginquote h5{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.loginstyle{
+    border-radius: 25px;
+    
+}
+
+.inputlocation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputlocation div{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.inputlocation div p{
+   width: 30%;
+   margin-right: 20px;
+   text-align: right;
+}
+
+.submitbuttonlocation{
+    padding-left: 57%;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #fcfcfc;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.logoutbuttonposition{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.moodcontainer_btn_container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.moodcontainer_btn{
+    width: 26%;
+    height: auto;
+    padding: 2%;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 0.2rem;
+    background-color: grey;
+}
+
+.moodcontainer_btn:before{
+    content: "";
+    display: block;
+    padding-bottom: 30%;
+}
+
+.moodcontainer_btn:after{
+    content: "";
+    display: block;
+    padding-bottom: 30%;
+}
+
+.angry:hover,
+.angryActive{
+    background-color: #ff353a !important;
+}
+
+.happy:hover,
+.happyActive{
+    background-color: #ffcf5f !important;
+}
+.worry:hover,
+.worryActive{
+    background-color: #b10aff !important;
+}
+.peaceful:hover,
+.peacefulActive{
+    background-color: #7fff97 !important;
+}
+.sad:hover,
+.sadActive{
+    background-color: #5558ff !important;
+}
+
+.shareinput_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 50%;
+
+}
+#calendar button:hover{
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(0,-1px , 0);
+    }
+  
+    20%,
+    80% {
+      transform: translate3d(0,2px , 0);
+    }
+  
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-0, -4px, 0);
+    }
+  
+    40%,
+    60% {
+      transform: translate3d(0, 4px, 0);
+    }
+  }
+
+  .liststyle li {
+    list-style-type: none;
+    height: 40px;
+  }
+
+  .liststyle li a{
+    margin-left: 12px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .imagesize{
+    width: 19px;
+    height:auto;
+
+  }
+
+
+   .liststyle li:hover{
+    transform:  translate(5px,0);
+   }
